@@ -2,12 +2,14 @@
   <div class="mx-auto px-6 absolute flex flex-col justify-center items-center h-screen w-full">
       <div class="flex flex-col justify-center items-center bg-green px-8 py-5 rounded-lg shadow-2xl">
           <h2 class="text-blue font-bold text-2xl pb-5">List of characters</h2>
+            <div class="overflow-y-auto h-56 pr-2">
                 <p class="text-white" v-if="error">Something went wrong...</p>
                 <p class="text-white" v-if="loading">Loading...</p>
                 <p class="text-white" v-else v-for="character in result.characters.results" :key="character.id">
                     {{ character.name }}
                 </p>
                 <div></div>
+            </div>    
           <div class="flex flex-col justify-center items-center space-x-0 md:flex-row md:space-x-4">
             <router-link to="/form" class="text-black bg-blue rounded-full mt-6 px-6 py-2 transition ease-in-out delay-200 hover:bg-black hover:text-blue duration-300"><i class="fas fa-arrow-left pr-3"></i>Go back</router-link>
           </div>
@@ -44,6 +46,18 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: black; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #00B0C8; 
+    border-radius: 10px;
+  }
 </style>
