@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Form from '../components/Form'
+import List from '../components/List'
 
 const routes = [
   {
@@ -11,9 +12,14 @@ const routes = [
   {
     path: '/form',
     name: 'Form',
-    component: Form,
-    //component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: Form, 
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: List, 
   }
+  //component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
 ]
 
 const router = createRouter({
