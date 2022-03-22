@@ -3,7 +3,7 @@
       <div class="flex flex-col justify-center items-center bg-green px-8 py-5 rounded-lg shadow-2xl">
           <h2 class="text-blue font-bold text-2xl pb-5">List of characters</h2>
             <div class="overflow-y-auto h-56 pr-2">
-                <p class="text-white" v-if="error">Something went wrong...</p>
+                <p class="text-white" v-if="error">Oops shawty, omething went wrong...</p>
                 <p class="text-white" v-if="loading">Loading...</p>
                 <p class="text-white" v-else v-for="character in result.characters.results" :key="character.id">
                     {{ character.name }}
@@ -29,6 +29,9 @@ const CHARACTERS_QUERY = gql`
         id
         name
         image
+        gender
+        status
+        type
       }
     }
   }
